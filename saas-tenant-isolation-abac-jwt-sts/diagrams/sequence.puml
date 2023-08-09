@@ -1,0 +1,30 @@
+@startuml SaaS tenant isolation with ABAC using AWS STS support for tags in JWT
+
+title SaaS tenant isolation with ABAC using AWS STS support for tags in JWT
+
+participant "User" as user
+participant "Auth0" as directory
+participant "S3 Bucket" as s3
+participant "STS" as sts
+participant "IAM Policy" as permissions
+
+' 1. Authenticate and get tokens
+user -> directory: Sign in
+user <-- directory: ID token and access token
+
+' 2. Exchange tokens for AWS credentials
+user -> sts: AssumeRoleWithWebIdentity(ID token, IAM role)
+user <-- sts: temporary security credentials
+
+' 3. Access AWS services with credentials
+user -> s3: GetObject
+s3 -> permissions: check permissions
+alt no access
+  s3 <-- permissions: Deny
+  user <-- s3: error (AccessDenied)
+else access
+  s3 <-- permissions: Allow
+  user <-- s3: S3 object
+end
+
+@enduml
