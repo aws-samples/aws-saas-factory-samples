@@ -1,4 +1,5 @@
 import os
+import pathlib
 
 from auth0.management import Auth0
 
@@ -43,16 +44,13 @@ def main() -> None:
 
 
 def get_trigger_code() -> str:
-    code = f"""
-        exports.onExecutePostLogin = async (event, api) => {{
-          api.idToken.setCustomClaim("https://aws.amazon.com/tags", {{
-            "principal_tags": {{
-              "TenantID": ["{constants.TENANT_ID}"]
-            }}
-          }});
-        }};
-    """
-    return code
+    trigger_file_path = (
+        pathlib.Path(__file__).parent.joinpath("auth0_post_login_trigger.js").resolve()
+    )
+    with open(trigger_file_path, encoding="utf-8") as trigger_file:
+        trigger_code_template = trigger_file.read()
+    trigger_code = trigger_code_template.replace("TENANT_ID", constants.TENANT_ID)
+    return trigger_code
 
 
 if __name__ == "__main__":

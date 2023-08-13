@@ -115,10 +115,10 @@ pip-compile --upgrade requirements-dev.in
 _auth0_tenant="YOUR_TENANT"
 # E.g., us
 _auth0_region="YOUR_REGION"
-# E.g., dev-zrlq0yr7.us.auth0.com
-_auth0_domain="${_auth0_tenant}.${_auth0_region}.auth0.com"
 ```
 ```bash
+# E.g., dev-zrlq0yr7.us.auth0.com
+_auth0_domain="${_auth0_tenant}.${_auth0_region}.auth0.com"
 sed -i "" -e "s/DOMAIN_PLACEHOLDER/${_auth0_domain}/" constants.py
 ```
 
