@@ -14,7 +14,7 @@ def main() -> None:
     trigger_id = "post-login"
     trigger_version = "v3"
 
-    action = auth0.actions.create_action(  # type: ignore[attr-defined]
+    action = auth0.actions.create_action(
         {
             "name": action_name,
             "supported_triggers": [
@@ -29,8 +29,8 @@ def main() -> None:
             "code": get_trigger_code(),
         }
     )
-    auth0.actions.deploy_action(action["id"])  # type: ignore[attr-defined]
-    auth0.actions.update_trigger_bindings(  # type: ignore[attr-defined]
+    auth0.actions.deploy_action(action["id"])
+    auth0.actions.update_trigger_bindings(
         trigger_id,
         {
             "bindings": [

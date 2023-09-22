@@ -4,13 +4,20 @@
 #
 #    pip-compile requirements.in
 #
+aiohttp==3.8.5
+    # via auth0-python
+aiosignal==1.3.1
+    # via aiohttp
+async-timeout==4.0.3
+    # via aiohttp
 attrs==23.1.0
     # via
+    #   aiohttp
     #   cattrs
     #   jsii
-auth0-python==4.4.0
+auth0-python==4.4.2
     # via -r requirements.in
-aws-cdk-lib==2.90.0
+aws-cdk-lib==2.96.2
     # via
     #   -r requirements.in
     #   aws-cdk.aws-lambda-python-alpha
@@ -19,56 +26,72 @@ aws-cdk.asset-awscli-v1==2.2.200
     # via aws-cdk-lib
 aws-cdk.asset-kubectl-v20==2.1.2
     # via aws-cdk-lib
-aws-cdk.asset-node-proxy-agent-v5==2.0.166
+aws-cdk.asset-node-proxy-agent-v6==2.0.1
     # via aws-cdk-lib
-aws-cdk.aws-lambda-python-alpha==2.90.0a0
+aws-cdk.aws-lambda-python-alpha==2.96.2a0
     # via -r requirements.in
 cattrs==23.1.2
     # via jsii
-cdk-nag==2.27.95
+cdk-nag==2.27.138
     # via -r requirements.in
 certifi==2023.7.22
     # via requests
 cffi==1.15.1
     # via cryptography
 charset-normalizer==3.2.0
-    # via requests
-constructs==10.2.69
+    # via
+    #   aiohttp
+    #   requests
+constructs==10.2.70
     # via
     #   -r requirements.in
     #   aws-cdk-lib
     #   aws-cdk.aws-lambda-python-alpha
     #   cdk-nag
-cryptography==41.0.3
-    # via pyjwt
-exceptiongroup==1.1.2
+cryptography==41.0.4
+    # via
+    #   auth0-python
+    #   pyopenssl
+exceptiongroup==1.1.3
     # via cattrs
+frozenlist==1.4.0
+    # via
+    #   aiohttp
+    #   aiosignal
 idna==3.4
-    # via requests
-importlib-resources==6.0.1
+    # via
+    #   requests
+    #   yarl
+importlib-resources==6.1.0
     # via jsii
-jsii==1.86.1
+jsii==1.89.0
     # via
     #   aws-cdk-lib
     #   aws-cdk.asset-awscli-v1
     #   aws-cdk.asset-kubectl-v20
-    #   aws-cdk.asset-node-proxy-agent-v5
+    #   aws-cdk.asset-node-proxy-agent-v6
     #   aws-cdk.aws-lambda-python-alpha
     #   cdk-nag
     #   constructs
+multidict==6.0.4
+    # via
+    #   aiohttp
+    #   yarl
 publication==0.0.3
     # via
     #   aws-cdk-lib
     #   aws-cdk.asset-awscli-v1
     #   aws-cdk.asset-kubectl-v20
-    #   aws-cdk.asset-node-proxy-agent-v5
+    #   aws-cdk.asset-node-proxy-agent-v6
     #   aws-cdk.aws-lambda-python-alpha
     #   cdk-nag
     #   constructs
     #   jsii
 pycparser==2.21
     # via cffi
-pyjwt[crypto]==2.8.0
+pyjwt==2.8.0
+    # via auth0-python
+pyopenssl==23.2.0
     # via auth0-python
 python-dateutil==2.8.2
     # via jsii
@@ -81,16 +104,18 @@ typeguard==2.13.3
     #   aws-cdk-lib
     #   aws-cdk.asset-awscli-v1
     #   aws-cdk.asset-kubectl-v20
-    #   aws-cdk.asset-node-proxy-agent-v5
+    #   aws-cdk.asset-node-proxy-agent-v6
     #   aws-cdk.aws-lambda-python-alpha
     #   cdk-nag
     #   constructs
     #   jsii
-typing-extensions==4.7.1
+typing-extensions==4.8.0
     # via
     #   cattrs
     #   jsii
-urllib3==2.0.4
+urllib3==2.0.5
     # via requests
-zipp==3.16.2
+yarl==1.9.2
+    # via aiohttp
+zipp==3.17.0
     # via importlib-resources

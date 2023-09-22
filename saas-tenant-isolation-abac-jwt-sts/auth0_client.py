@@ -9,7 +9,7 @@ def main() -> None:
     mgmt_api_token = os.environ["AUTH0_MGMT_API_TOKEN"]
     auth0 = Auth0(constants.OIDC_PROVIDER_DOMAIN, mgmt_api_token)
 
-    client = auth0.clients.create(  # type: ignore[attr-defined]
+    client = auth0.clients.create(
         {
             "name": "UI",
             "callbacks": ["https://localhost"],
