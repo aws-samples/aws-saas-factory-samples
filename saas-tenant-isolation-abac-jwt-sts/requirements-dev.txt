@@ -34,7 +34,7 @@ flake8==6.1.0
     # via -r requirements-dev.in
 gitdb==4.0.10
     # via gitpython
-gitpython==3.1.36
+gitpython==3.1.37
     # via bandit
 idna==3.4
     # via
@@ -99,10 +99,10 @@ requests==2.31.0
     #   xenon
 rich==13.5.3
     # via bandit
-ruamel.yaml==0.17.32
+ruamel-yaml==0.17.32
     # via safety
-ruamel.yaml.clib==0.2.7
-    # via ruamel.yaml
+ruamel-yaml-clib==0.2.7
+    # via ruamel-yaml
 safety==2.3.5
     # via -r requirements-dev.in
 six==1.16.0
@@ -113,21 +113,12 @@ smmap==5.0.1
     # via gitdb
 stevedore==5.1.0
     # via bandit
-tomli==2.0.1
-    # via
-    #   black
-    #   dparse
-    #   mypy
-    #   pylint
 tomlkit==0.12.1
     # via pylint
 typing-extensions==4.8.0
     # via
     #   -c requirements.txt
-    #   astroid
-    #   black
     #   mypy
-    #   pylint
 urllib3==2.0.5
     # via
     #   -c requirements.txt
