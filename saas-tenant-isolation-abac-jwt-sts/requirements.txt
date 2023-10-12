@@ -4,7 +4,7 @@
 #
 #    pip-compile requirements.in
 #
-aiohttp==3.8.5
+aiohttp==3.8.6
     # via auth0-python
 aiosignal==1.3.1
     # via aiohttp
@@ -17,7 +17,7 @@ attrs==23.1.0
     #   jsii
 auth0-python==4.4.2
     # via -r requirements.in
-aws-cdk-lib==2.96.2
+aws-cdk-lib==2.100.0
     # via
     #   -r requirements.in
     #   aws-cdk.aws-lambda-python-alpha
@@ -28,21 +28,21 @@ aws-cdk.asset-kubectl-v20==2.1.2
     # via aws-cdk-lib
 aws-cdk.asset-node-proxy-agent-v6==2.0.1
     # via aws-cdk-lib
-aws-cdk.aws-lambda-python-alpha==2.96.2a0
+aws-cdk.aws-lambda-python-alpha==2.100.0a0
     # via -r requirements.in
 cattrs==23.1.2
     # via jsii
-cdk-nag==2.27.138
+cdk-nag==2.27.159
     # via -r requirements.in
 certifi==2023.7.22
     # via requests
-cffi==1.15.1
+cffi==1.16.0
     # via cryptography
-charset-normalizer==3.2.0
+charset-normalizer==3.3.0
     # via
     #   aiohttp
     #   requests
-constructs==10.2.70
+constructs==10.3.0
     # via
     #   -r requirements.in
     #   aws-cdk-lib
@@ -64,7 +64,7 @@ idna==3.4
     #   yarl
 importlib-resources==6.1.0
     # via jsii
-jsii==1.89.0
+jsii==1.90.0
     # via
     #   aws-cdk-lib
     #   aws-cdk.asset-awscli-v1
@@ -113,7 +113,7 @@ typing-extensions==4.8.0
     # via
     #   cattrs
     #   jsii
-urllib3==2.0.5
+urllib3==2.0.6
     # via requests
 yarl==1.9.2
     # via aiohttp
