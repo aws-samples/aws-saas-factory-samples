@@ -42,10 +42,6 @@ story because it allows to:
 * Use readily available AWS SDKs for multiple programming languages
 * Remove the need for library upgrade campaigns
 
-**Note:** AWS STS [requires](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_adding-assume-role-idp) tags claim value to be a JSON object. Amazon Cognito 
-currently supports JSON strings as claim value through [pre token generation Lambda 
-trigger](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-token-generation.html#cognito-user-pools-lambda-trigger-syntax-pre-token-generation). We will be using Auth0 that does support JSON objects.
-
 ## Architecture diagram
 <p>
   <img alt="Architecture diagram" src="diagrams/architecture.png" width="50%">
